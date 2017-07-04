@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!-- pattern>%-5.5level|%-15.-15logger{0}|%-140.-140msg| %4.4r |%20.20method|%caller{1}</pattern-->
+			<pattern>%-5.5level|%date{HH:mm:ss.SSS}|%msg|%caller{1}</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="com.itranga.powerdns.client" level="trace" />
+
+	<root level="error">
+		<appender-ref ref="console" />
+	</root>
+	
+</configuration>
