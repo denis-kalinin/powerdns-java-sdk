@@ -42,9 +42,9 @@ public class BatchPatchTest {
 	//private static ExecutorService executorService;
 	//private static ConcurrentHashMap<String, CompletableFuture<Collection<String>>> results = new ConcurrentHashMap<>();
 	
-	private static final int HOSTS_PER_DOMAIN = 7;
+	private static final int HOSTS_PER_DOMAIN = 1;
 	
-	private static Collection<String> domains = Arrays.asList("example.com.", "example.org.", "example.net."); 
+	private static Collection<String> domains = Arrays.asList("link.1c.ru."); 
 	
 	@Parameterized.Parameters
 	public static Collection<PatchRecord> getTestData(){
@@ -77,8 +77,8 @@ public class BatchPatchTest {
 		zoneTemplate.setKind(Kind.Master);
 		//zoneTemplate.setSoa_edit_api(SoaEditApi.EPOCH);
 		
-		PowerDnsClient pdsc = new PowerDnsClientBuilder().setApiUrl("https://localhost/api")
-			.setApiKey("cXj2fsQBfuuQRpjVGqSMvANHePBfjWGs")
+		PowerDnsClient pdsc = new PowerDnsClientBuilder().setApiUrl("http://10.72.101.177:80/api")
+			.setApiKey("changeme")
 			.setApiVersion("1")
 			.setZoneTemplate(zoneTemplate)
 			.build();
@@ -165,8 +165,8 @@ public class BatchPatchTest {
 						return null;
 					});
 		
-		//Collection<String> hostnames = dnsClient.doBatchJob().join();
-		//LOG.info("REGISTERD: {}", hostnames);
+		Collection<String> hostnames = dnsClient.doBatchJob().join();
+		LOG.info("REGISTERD: {}", hostnames);
 		//LOG.info("NS for {}: {}", thePatch.hostname, future.join());
 		//results.put(Thread.currentThread().getName(), nsFuture);
 				

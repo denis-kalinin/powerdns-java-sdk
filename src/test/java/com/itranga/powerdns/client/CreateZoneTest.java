@@ -67,8 +67,8 @@ public class CreateZoneTest {
 		zoneTemplate.setKind(Kind.Master);
 		//zoneTemplate.setSoa_edit_api(SoaEditApi.EPOCH);
 		
-		PowerDnsClient pdsc =new PowerDnsClientBuilder().setApiUrl("https://localhost/api")
-			.setApiKey("cXj2fsQBfuuQRpjVGqSMvANHePBfjWGs")
+		PowerDnsClient pdsc =new PowerDnsClientBuilder().setApiUrl("http://10.72.101.177:80/api")
+			.setApiKey("changeme")
 			.setApiVersion("1")
 			.setZoneTemplate(zoneTemplate)
 			.build();

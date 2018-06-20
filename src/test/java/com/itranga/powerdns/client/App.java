@@ -18,7 +18,7 @@ public class App {
 		
 		PowerDnsClient dnsClient = new PowerDnsClientBuilder()
 				.setApiKey("yourApiKey")
-				.setApiUrl("https://localhost/api")
+				.setApiUrl("http://10.72.101.177:80/api")
 				.setDefaultNS("nx1.example.com", "nx2.example.com")
 				.setImplicitRecordTtl(180)
 				.build();
